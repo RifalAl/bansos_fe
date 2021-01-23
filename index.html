@@ -19,11 +19,11 @@
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-primary b-down fixed-top">
     <div class="container">
-      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+      <div class=" w-100 order-1 order-md-0">
         <a class="navbar-brand" href="index.html">
           <img src="assets/img/logo/logo_digides.png" width="110">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+        <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target=".dual-collapse2">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
@@ -44,10 +44,10 @@
   <section>
     <div class="container" style="margin-top: 5.5rem;">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 mb-2">
           <h4 id="judul" name="judul">Manajemen Bantuan</h4>
         </div>
-        <div class="col-md-6 text-right">
+        <div id="wrapBtnListBantuan" class="col-md-6">
           <a href="list_bantuan.html" class="btn btn-primary" >
             <i class="fa fa-list mr-2"></i> List Bantuan
           </a>
@@ -84,7 +84,7 @@
                   <div class="card-body bg-primary">
                     <div class="row px-4 py-2">
                       <div class="col-6">
-                        <span id="mendapatBantuan" name="mendapatBantuan">1300</span> <br>
+                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">1300</span> <br>
                         <span class="judul-card">Penduduk Mendapat Bantuan</span>
                       </div>
                       <div class="col-6 text-right center-v">
@@ -99,7 +99,7 @@
                   <div class="card-body bg-secondary">
                     <div class="row px-4 py-2">
                       <div class="col-6">
-                        <span id="mendapatBantuan" name="mendapatBantuan">252</span> <br>
+                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">252</span> <br>
                         <span class="judul-card">Kepala Keluarga Mendapat Bantuan</span>
                       </div>
                       <div class="col-6 text-right center-v">
@@ -111,7 +111,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-md-6 col-lg-3">
                 <div class="form-group row">
                   <label for="pilihDusun1" class="col-sm-3 col-form-label">Dusun:</label>
                   <div class="col-sm-9">
@@ -126,7 +126,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-md-6 col-lg-3">
                 <div class="form-group row">
                   <label for="pilihRT1" class="col-sm-3 col-form-label">RT:</label>
                   <div class="col-sm-9">
@@ -141,7 +141,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6 text-right">
+              <div class="col-md-12 col-lg-6 text-right">
                 <button class="btn btn-primary">
                   <i class="fa fa-print mr-2"></i> Cetak
                 </button>
@@ -161,7 +161,7 @@
                   <div class="card-body bg-primary">
                     <div class="row px-4 py-2">
                       <div class="col-6">
-                        <span id="mendapatBantuan" name="mendapatBantuan">320</span> <br>
+                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">320</span> <br>
                         <span class="judul-card">Penduduk Mendapat Bantuan</span>
                       </div>
                       <div class="col-6 text-right center-v">
@@ -176,7 +176,7 @@
                   <div class="card-body bg-secondary">
                     <div class="row px-4 py-2">
                       <div class="col-6">
-                        <span id="mendapatBantuan" name="mendapatBantuan">120</span> <br>
+                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">120</span> <br>
                         <span class="judul-card">Kepala Keluarga Mendapat Bantuan</span>
                       </div>
                       <div class="col-6 text-right center-v">
@@ -188,7 +188,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-md-6 col-lg-3">
                 <div class="form-group row">
                   <label for="pilihDusun2" class="col-sm-3 col-form-label">Dusun:</label>
                   <div class="col-sm-9">
@@ -203,7 +203,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-md-6 col-lg-3">
                 <div class="form-group row">
                   <label for="pilihRT2" class="col-sm-3 col-form-label">RT:</label>
                   <div class="col-sm-9">
@@ -218,7 +218,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6 text-right">
+              <div class="col-md-12 col-lg-6 text-right">
                 <button class="btn btn-primary">
                   <i class="fa fa-print mr-2"></i> Cetak
                 </button>
@@ -238,7 +238,7 @@
                   <div class="card-body bg-primary">
                     <div class="row px-4 py-2">
                       <div class="col-6">
-                        <span id="mendapatBantuan" name="mendapatBantuan">400</span> <br>
+                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">400</span> <br>
                         <span class="judul-card">Penduduk Mendapat Bantuan</span>
                       </div>
                       <div class="col-6 text-right center-v">
@@ -253,7 +253,7 @@
                   <div class="card-body bg-secondary">
                     <div class="row px-4 py-2">
                       <div class="col-6">
-                        <span id="mendapatBantuan" name="mendapatBantuan">150</span> <br>
+                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">150</span> <br>
                         <span class="judul-card">Kepala Keluarga Mendapat Bantuan</span>
                       </div>
                       <div class="col-6 text-right center-v">
@@ -265,7 +265,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-md-6 col-lg-3">
                 <div class="form-group row">
                   <label for="pilihDusun3" class="col-sm-3 col-form-label">Dusun:</label>
                   <div class="col-sm-9">
@@ -280,7 +280,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-md-6 col-lg-3">
                 <div class="form-group row">
                   <label for="pilihRT3" class="col-sm-3 col-form-label">RT:</label>
                   <div class="col-sm-9">
@@ -295,7 +295,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6 text-right">
+              <div class="col-md-12 col-lg-6 text-right">
                 <button class="btn btn-primary">
                   <i class="fa fa-print mr-2"></i> Cetak
                 </button>
@@ -315,7 +315,7 @@
                   <div class="card-body bg-primary">
                     <div class="row px-4 py-2">
                       <div class="col-6">
-                        <span id="mendapatBantuan" name="mendapatBantuan">6000</span> <br>
+                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">6000</span> <br>
                         <span class="judul-card">Penduduk Mendapat Bantuan</span>
                       </div>
                       <div class="col-6 text-right center-v">
@@ -330,7 +330,7 @@
                   <div class="card-body bg-secondary">
                     <div class="row px-4 py-2">
                       <div class="col-6">
-                        <span id="mendapatBantuan" name="mendapatBantuan">1200</span> <br>
+                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">1200</span> <br>
                         <span class="judul-card">Kepala Keluarga Mendapat Bantuan</span>
                       </div>
                       <div class="col-6 text-right center-v">
@@ -342,7 +342,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-md-6 col-lg-3">
                 <div class="form-group row">
                   <label for="pilihDusun4" class="col-sm-3 col-form-label">Dusun:</label>
                   <div class="col-sm-9">
@@ -357,7 +357,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-md-6 col-lg-3">
                 <div class="form-group row">
                   <label for="pilihRT4" class="col-sm-3 col-form-label">RT:</label>
                   <div class="col-sm-9">
@@ -372,7 +372,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6 text-right">
+              <div class="col-md-12 col-lg-6 text-right">
                 <button class="btn btn-primary">
                   <i class="fa fa-print mr-2"></i> Cetak
                 </button>
@@ -392,7 +392,7 @@
                   <div class="card-body bg-primary">
                     <div class="row px-4 py-2">
                       <div class="col-6">
-                        <span id="mendapatBantuan" name="mendapatBantuan">500</span> <br>
+                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">500</span> <br>
                         <span class="judul-card">Penduduk Mendapat Bantuan</span>
                       </div>
                       <div class="col-6 text-right center-v">
@@ -407,7 +407,7 @@
                   <div class="card-body bg-secondary">
                     <div class="row px-4 py-2">
                       <div class="col-6">
-                        <span id="mendapatBantuan" name="mendapatBantuan">240</span> <br>
+                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">240</span> <br>
                         <span class="judul-card">Kepala Keluarga Mendapat Bantuan</span>
                       </div>
                       <div class="col-6 text-right center-v">
@@ -419,7 +419,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-md-6 col-lg-3">
                 <div class="form-group row">
                   <label for="pilihDusun5" class="col-sm-3 col-form-label">Dusun:</label>
                   <div class="col-sm-9">
@@ -434,7 +434,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-md-6 col-lg-3">
                 <div class="form-group row">
                   <label for="pilihRT5" class="col-sm-3 col-form-label">RT:</label>
                   <div class="col-sm-9">
@@ -449,7 +449,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6 text-right">
+              <div class="col-md-12 col-lg-6 text-right">
                 <button class="btn btn-primary">
                   <i class="fa fa-print mr-2"></i> Cetak
                 </button>

@@ -109,7 +109,7 @@ html,body{
     border-radius: 5px;
 }
 
-#mendapatBantuan{
+.jum-bantuan{
     font-weight: 600;
     font-size: 2.9rem;
     color: #fff;
@@ -182,5 +182,24 @@ html,body{
   background-color: #C4C4C4 !important;
     border-color:  transparent !important;
     color: #202020;
+}
+
+  #wrapBtnListBantuan{
+    text-align: right !important;
+  }
+
+@media (max-width: 520px){
+  #wrapBtnListBantuan{
+    text-align: left !important;
+  }
+
+  .jum-bantuan{
+    font-size: 2.5rem;
+  }
+
+  .judul-card{
+    font-size: 1rem;
+  }
+
 }
 

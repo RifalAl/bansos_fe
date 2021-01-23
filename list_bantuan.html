@@ -20,11 +20,11 @@
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-primary b-down fixed-top">
     <div class="container">
-      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+      <div class="navbar-collapse w-100 order-1 order-md-0 dual-collapse2">
         <a class="navbar-brand" href="index.html">
           <img src="assets/img/logo/logo_digides.png" width="110">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+        <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target=".dual-collapse2">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
@@ -45,10 +45,10 @@
   <section>
     <div class="container" style="margin-top: 5.5rem;">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 mb-2">
           <h4 id="judul" name="judul">List Bantuan</h4>
         </div>
-        <div class="col-md-6 text-right">
+        <div id="wrapBtnListBantuan" class="col-md-6">
           <button class="btn btn-primary" data-toggle="modal" data-target="#tambahBantuan">
             <i class="fa fa-plus mr-2"></i> Tambah Bantuan
           </button>
@@ -156,7 +156,9 @@ $(document).ready(function() {
       targets: [0, 1],
       className: 'text-center',
       orderable: false,
-    }],
+    },
+    { responsivePriority: 1, targets: 1 },
+],
   });
 
   $(".dataTables_filter input")
