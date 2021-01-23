@@ -1,0 +1,79 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "penerima":"Ahmad Rifaldi",
+        "dusun":"Dusun A",
+        "rt":"RT 1",
+        "kk":"1234-1234-1234",
+        "ktp":"123-123-123",
+        "sisa":"2.500.000",
+        "jenisBantuan": "PKH"
+    }, {
+        "no": 2,
+        "penerima":"Ahmad Rifaldi",
+        "dusun":"Dusun A",
+        "rt":"RT 1",
+        "kk":"1234-1234-1234",
+        "ktp":"123-123-123",
+        "sisa":"2.500.000",
+        "jenisBantuan": "CSR"
+    }, {
+        "no": 3,
+        "penerima":"Ahmad Rifaldi",
+        "dusun":"Dusun B",
+        "rt":"RT 2",
+        "kk":"1234-1234-1234",
+        "ktp":"123-123-123",
+        "sisa":"2.500.000",
+        "jenisBantuan": "Prakerja"
+    }, {
+        "no": 4,
+        "penerima":"Ahmad Rifaldi",
+        "dusun":"Dusun B",
+        "rt":"RT 3",
+        "kk":"1234-1234-1234",
+        "ktp":"123-123-123",
+        "sisa":"2.500.000",
+        "jenisBantuan": "BLT"
+    }, {
+        "no": 5,
+        "penerima":"Ahmad Rifaldi",
+        "dusun":"Dusun C",
+        "rt":"RT 4",
+        "kk":"1234-1234-1234",
+        "ktp":"123-123-123",
+        "sisa":"2.500.000",
+        "jenisBantuan": "Bantuan Rumah"
+    }, {
+        "no": 6,
+        "penerima":"Ahmad Rifaldi",
+        "dusun":"Dusun C",
+        "rt":"RT 4",
+        "kk":"1234-1234-1234",
+        "ktp":"123-123-123",
+        "sisa":"2.500.000",
+        "jenisBantuan": "Bantuan Langsung"
+    }, {
+        "no": 7,
+        "penerima":"Ahmad Rifaldi",
+        "dusun":"Dusun D",
+        "rt":"RT 5",
+        "kk":"1234-1234-1234",
+        "ktp":"123-123-123",
+        "sisa":"2.500.000",
+        "jenisBantuan": "Bantuan Lain"
+    }, {
+        "no": 8,
+        "penerima":"Ahmad Rifaldi",
+        "dusun":"Dusun E",
+        "rt":"RT 5",
+        "kk":"1234-1234-1234",
+        "ktp":"123-123-123",
+        "sisa":"2.500.000",
+        "jenisBantuan":"Bantuan Pendidikan"
+    }]
+}

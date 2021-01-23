@@ -1,27 +1,985 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/my-style.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css">
+  <title>Bantuan Sosial</title>
+  <link rel="icon" type="image/png" href="assets/img/icon/favicon.png" />
+</head>
 
-    <title>Dashboard Kabupaten</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-primary b-down fixed-top">
+    <div class="container">
+      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logo/logo_digides.png" width="110">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="mx-auto order-0">
+      </div>
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" style="padding-top: 5px">
+            <span id="namaUser" name="namaUser">Ahmad Rifaldi</span>
+          </li>
+          <li class="nav-item">
+            <img class="rounded-circle ml-2" src="assets/img/avatar/avatar.jpg" width="32">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section>
+    <div class="container" style="margin-top: 5.5rem;">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 id="judul" name="judul">Manajemen Bantuan</h4>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="list_bantuan.html" class="btn btn-primary" >
+            <i class="fa fa-list mr-2"></i> List Bantuan
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container mt-4 mb-4">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link link-tab active" href="#rangkuman" role="tab" data-toggle="tab">Rangkuman</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-tab" href="#pkh" role="tab" data-toggle="tab">PKH</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-tab" href="#blt" role="tab" data-toggle="tab">BLT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-tab" href="#prakerja" role="tab" data-toggle="tab">Prakerja</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-tab" href="#csrKalla" role="tab" data-toggle="tab">CSR Kalla</a>
+        </li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content mt-3">
+        <div role="tabpanel" class="tab-pane fade in active show" id="rangkuman">
+          <div class="container">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body bg-primary">
+                    <div class="row px-4 py-2">
+                      <div class="col-6">
+                        <span id="mendapatBantuan" name="mendapatBantuan">1300</span> <br>
+                        <span class="judul-card">Penduduk Mendapat Bantuan</span>
+                      </div>
+                      <div class="col-6 text-right center-v">
+                        <img src="assets/img/icon/mendapatBantuan.svg" width="60">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body bg-secondary">
+                    <div class="row px-4 py-2">
+                      <div class="col-6">
+                        <span id="mendapatBantuan" name="mendapatBantuan">252</span> <br>
+                        <span class="judul-card">Kepala Keluarga Mendapat Bantuan</span>
+                      </div>
+                      <div class="col-6 text-right center-v">
+                        <img src="assets/img/icon/kk.svg" width="60">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <div class="form-group row">
+                  <label for="pilihDusun1" class="col-sm-3 col-form-label">Dusun:</label>
+                  <div class="col-sm-9">
+                    <select class="form-control status-dropdown" id="pilihDusun1">
+                      <option value="">Semua</option>
+                      <option value="Dusun A">Dusun A</option>
+                      <option value="Dusun B">Dusun B</option>
+                      <option value="Dusun C">Dusun C</option>
+                      <option value="Dusun D">Dusun D</option>
+                      <option value="Dusun E">Dusun E</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group row">
+                  <label for="pilihRT1" class="col-sm-3 col-form-label">RT:</label>
+                  <div class="col-sm-9">
+                    <select class="form-control" id="pilihRT1">
+                      <option value="">Semua</option>
+                      <option value="RT 1">RT 1</option>
+                      <option value="RT 2">RT 2</option>
+                      <option value="RT 3">RT 3</option>
+                      <option value="RT 4">RT 4</option>
+                      <option value="RT 5">RT 5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 text-right">
+                <button class="btn btn-primary">
+                  <i class="fa fa-print mr-2"></i> Cetak
+                </button>
+              </div>
+              <div class="col-12">
+                <table id="tableRangkuman" class="table table-hover responsive nowrap" style="width:100%">
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="pkh">
+          <div class="container">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body bg-primary">
+                    <div class="row px-4 py-2">
+                      <div class="col-6">
+                        <span id="mendapatBantuan" name="mendapatBantuan">320</span> <br>
+                        <span class="judul-card">Penduduk Mendapat Bantuan</span>
+                      </div>
+                      <div class="col-6 text-right center-v">
+                        <img src="assets/img/icon/mendapatBantuan.svg" width="60">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body bg-secondary">
+                    <div class="row px-4 py-2">
+                      <div class="col-6">
+                        <span id="mendapatBantuan" name="mendapatBantuan">120</span> <br>
+                        <span class="judul-card">Kepala Keluarga Mendapat Bantuan</span>
+                      </div>
+                      <div class="col-6 text-right center-v">
+                        <img src="assets/img/icon/kk.svg" width="60">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <div class="form-group row">
+                  <label for="pilihDusun2" class="col-sm-3 col-form-label">Dusun:</label>
+                  <div class="col-sm-9">
+                    <select class="form-control status-dropdown" id="pilihDusun2">
+                      <option value="">Semua</option>
+                      <option value="Dusun A">Dusun A</option>
+                      <option value="Dusun B">Dusun B</option>
+                      <option value="Dusun C">Dusun C</option>
+                      <option value="Dusun D">Dusun D</option>
+                      <option value="Dusun E">Dusun E</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group row">
+                  <label for="pilihRT2" class="col-sm-3 col-form-label">RT:</label>
+                  <div class="col-sm-9">
+                    <select class="form-control" id="pilihRT2">
+                      <option value="">Semua</option>
+                      <option value="RT 1">RT 1</option>
+                      <option value="RT 2">RT 2</option>
+                      <option value="RT 3">RT 3</option>
+                      <option value="RT 4">RT 4</option>
+                      <option value="RT 5">RT 5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 text-right">
+                <button class="btn btn-primary">
+                  <i class="fa fa-print mr-2"></i> Cetak
+                </button>
+              </div>
+              <div class="col-12">
+                <table id="tablePKH" class="table table-hover responsive nowrap" style="width:100%">
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="blt">
+          <div class="container">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body bg-primary">
+                    <div class="row px-4 py-2">
+                      <div class="col-6">
+                        <span id="mendapatBantuan" name="mendapatBantuan">400</span> <br>
+                        <span class="judul-card">Penduduk Mendapat Bantuan</span>
+                      </div>
+                      <div class="col-6 text-right center-v">
+                        <img src="assets/img/icon/mendapatBantuan.svg" width="60">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body bg-secondary">
+                    <div class="row px-4 py-2">
+                      <div class="col-6">
+                        <span id="mendapatBantuan" name="mendapatBantuan">150</span> <br>
+                        <span class="judul-card">Kepala Keluarga Mendapat Bantuan</span>
+                      </div>
+                      <div class="col-6 text-right center-v">
+                        <img src="assets/img/icon/kk.svg" width="60">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <div class="form-group row">
+                  <label for="pilihDusun3" class="col-sm-3 col-form-label">Dusun:</label>
+                  <div class="col-sm-9">
+                    <select class="form-control status-dropdown" id="pilihDusun3">
+                      <option value="">Semua</option>
+                      <option value="Dusun A">Dusun A</option>
+                      <option value="Dusun B">Dusun B</option>
+                      <option value="Dusun C">Dusun C</option>
+                      <option value="Dusun D">Dusun D</option>
+                      <option value="Dusun E">Dusun E</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group row">
+                  <label for="pilihRT3" class="col-sm-3 col-form-label">RT:</label>
+                  <div class="col-sm-9">
+                    <select class="form-control" id="pilihRT3">
+                      <option value="">Semua</option>
+                      <option value="RT 1">RT 1</option>
+                      <option value="RT 2">RT 2</option>
+                      <option value="RT 3">RT 3</option>
+                      <option value="RT 4">RT 4</option>
+                      <option value="RT 5">RT 5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 text-right">
+                <button class="btn btn-primary">
+                  <i class="fa fa-print mr-2"></i> Cetak
+                </button>
+              </div>
+              <div class="col-12">
+                <table id="tableBLT" class="table table-hover responsive nowrap" style="width:100%">
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="prakerja">
+          <div class="container">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body bg-primary">
+                    <div class="row px-4 py-2">
+                      <div class="col-6">
+                        <span id="mendapatBantuan" name="mendapatBantuan">6000</span> <br>
+                        <span class="judul-card">Penduduk Mendapat Bantuan</span>
+                      </div>
+                      <div class="col-6 text-right center-v">
+                        <img src="assets/img/icon/mendapatBantuan.svg" width="60">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body bg-secondary">
+                    <div class="row px-4 py-2">
+                      <div class="col-6">
+                        <span id="mendapatBantuan" name="mendapatBantuan">1200</span> <br>
+                        <span class="judul-card">Kepala Keluarga Mendapat Bantuan</span>
+                      </div>
+                      <div class="col-6 text-right center-v">
+                        <img src="assets/img/icon/kk.svg" width="60">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <div class="form-group row">
+                  <label for="pilihDusun4" class="col-sm-3 col-form-label">Dusun:</label>
+                  <div class="col-sm-9">
+                    <select class="form-control status-dropdown" id="pilihDusun4">
+                      <option value="">Semua</option>
+                      <option value="Dusun A">Dusun A</option>
+                      <option value="Dusun B">Dusun B</option>
+                      <option value="Dusun C">Dusun C</option>
+                      <option value="Dusun D">Dusun D</option>
+                      <option value="Dusun E">Dusun E</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group row">
+                  <label for="pilihRT4" class="col-sm-3 col-form-label">RT:</label>
+                  <div class="col-sm-9">
+                    <select class="form-control" id="pilihRT4">
+                      <option value="">Semua</option>
+                      <option value="RT 1">RT 1</option>
+                      <option value="RT 2">RT 2</option>
+                      <option value="RT 3">RT 3</option>
+                      <option value="RT 4">RT 4</option>
+                      <option value="RT 5">RT 5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 text-right">
+                <button class="btn btn-primary">
+                  <i class="fa fa-print mr-2"></i> Cetak
+                </button>
+              </div>
+              <div class="col-12">
+                <table id="tablePrakerja" class="table table-hover responsive nowrap" style="width:100%">
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="csrKalla">
+          <div class="container">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body bg-primary">
+                    <div class="row px-4 py-2">
+                      <div class="col-6">
+                        <span id="mendapatBantuan" name="mendapatBantuan">500</span> <br>
+                        <span class="judul-card">Penduduk Mendapat Bantuan</span>
+                      </div>
+                      <div class="col-6 text-right center-v">
+                        <img src="assets/img/icon/mendapatBantuan.svg" width="60">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body bg-secondary">
+                    <div class="row px-4 py-2">
+                      <div class="col-6">
+                        <span id="mendapatBantuan" name="mendapatBantuan">240</span> <br>
+                        <span class="judul-card">Kepala Keluarga Mendapat Bantuan</span>
+                      </div>
+                      <div class="col-6 text-right center-v">
+                        <img src="assets/img/icon/kk.svg" width="60">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <div class="form-group row">
+                  <label for="pilihDusun5" class="col-sm-3 col-form-label">Dusun:</label>
+                  <div class="col-sm-9">
+                    <select class="form-control status-dropdown" id="pilihDusun5">
+                      <option value="">Semua</option>
+                      <option value="Dusun A">Dusun A</option>
+                      <option value="Dusun B">Dusun B</option>
+                      <option value="Dusun C">Dusun C</option>
+                      <option value="Dusun D">Dusun D</option>
+                      <option value="Dusun E">Dusun E</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group row">
+                  <label for="pilihRT5" class="col-sm-3 col-form-label">RT:</label>
+                  <div class="col-sm-9">
+                    <select class="form-control" id="pilihRT5">
+                      <option value="">Semua</option>
+                      <option value="RT 1">RT 1</option>
+                      <option value="RT 2">RT 2</option>
+                      <option value="RT 3">RT 3</option>
+                      <option value="RT 4">RT 4</option>
+                      <option value="RT 5">RT 5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 text-right">
+                <button class="btn btn-primary">
+                  <i class="fa fa-print mr-2"></i> Cetak
+                </button>
+              </div>
+              <div class="col-12">
+                <table id="tableCSR" class="table table-hover responsive nowrap" style="width:100%">
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Modal -->
+  <div class="modal fade" id="tambahBantuan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Tambah Jenis Bantuan</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="namaBantuan">Nama Bantuan</label>
+              <input type="text" class="form-control" id="namaBantuan" aria-describedby="">
+              <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">Tambahkan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script>
+$(document).ready(function() {
+  dataTable1 = $("#tableRangkuman").DataTable({
+    aaSorting: [],
+    responsive: true,
+    lengthChange: true,
+    bFilter: true,
+    // Pagination settings
+    dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+    // read more: https://datatables.net/examples/basic_init/dom.html
+    lengthMenu: [5, 10, 25, 50],
+    pageLength: 10,
+    language: {
+      'lengthMenu': 'Display _MENU_',
+    },
+    searchDelay: 500,
+    processing: true,
+    serverSide: false,
+    ajax: {
+      url: 'source/dummydata.json',
+      type: 'POST',
 
-    <!-- Optional JavaScript; choose one of the two! -->
+    },
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    // ajax:  'source/dummydata.json',
+    columns: [{
+      data: 'null',
+      title: 'No',
+      render: function(data, type, row, meta) {
+        return meta.row + meta.settings._iDisplayStart + 1;
+      },
+      width: 35,
+      orderable: false,
+    }, {
+      data: 'penerima',
+      title: 'Penerima',
+    }, {
+      data: 'dusun',
+      title: 'Dusun',
+    }, {
+      data: 'rt',
+      title: 'RT',
+    }, {
+      data: 'kk',
+      title: 'No.KK',
+    }, {
+      data: 'ktp',
+      title: 'No.KTP'
+    }, {
+      data: 'sisa',
+      title: 'Sisa',
+    }, {
+      field: 'jenis',
+      title: 'Jenis',
+      responsivePriority: -1,
+      className: 'text-center',
+      orderable: false,
+      width: 100,
+      render: function(data, type, full, meta) {
+        return `
+                    <a class="btn btn-sm btn-outline-primary no-click" style="border-radius:2rem">PKH</a>`;
+      },
+    }],
+    columnDefs: [{
+      targets: [0, 1, 2, 3, 4, 5, 6, 7],
+      className: 'text-center',
+      orderable: false,
+    }],
+  });
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    -->
-  </body>
+  $(".dataTables_filter input")
+    .attr("placeholder", "Search here...")
+    .css({
+      width: "300px",
+      display: "inline-block"
+    });
+
+  dataTable1.on('order.dt search.dt', function() {
+    dataTable1.column(0, {
+      search: 'applied',
+      order: 'applied'
+    }).nodes().each(function(cell, i) {
+      cell.innerHTML = i + 1;
+    });
+  }).draw();
+
+  $('[data-toggle="tooltip"]').tooltip();
+
+  $('#pilihDusun1').on('change', function(e) {
+    var status = $(this).val();
+    $('#pilihDusun1').val(status)
+    console.log(status)
+    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+    dataTable1.column(2).search(status).draw();
+  });
+
+  $('#pilihRT1').on('change', function(e) {
+    var status = $(this).val();
+    $('#pilihRT1').val(status)
+    console.log(status)
+    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+    dataTable1.column(3).search(status).draw();
+  })
+});
+</script>
+<script>
+$(document).ready(function() {
+  dataTable2 = $("#tablePKH").DataTable({
+    aaSorting: [],
+    responsive: true,
+    lengthChange: true,
+    bFilter: true,
+    // Pagination settings
+    dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+    // read more: https://datatables.net/examples/basic_init/dom.html
+    lengthMenu: [5, 10, 25, 50],
+    pageLength: 10,
+    language: {
+      'lengthMenu': 'Display _MENU_',
+    },
+
+    searchDelay: 500,
+    processing: true,
+    serverSide: false,
+    ajax: {
+      url: 'source/dummydata.json',
+      type: 'POST',
+
+    },
+
+    // ajax:  'source/dummydata.json',
+    columns: [{
+      data: 'null',
+      title: 'No',
+      render: function(data, type, row, meta) {
+        return meta.row + meta.settings._iDisplayStart + 1;
+      },
+      width: 35,
+      orderable: false,
+    }, {
+      data: 'penerima',
+      title: 'Penerima',
+    }, {
+      data: 'dusun',
+      title: 'Dusun',
+    }, {
+      data: 'rt',
+      title: 'RT',
+    }, {
+      data: 'kk',
+      title: 'No.KK',
+    }, {
+      data: 'ktp',
+      title: 'No.KTP'
+    }, {
+      data: 'sisa',
+      title: 'Sisa',
+    }],
+    columnDefs: [{
+      targets: [0, 1, 2, 3, 4, 5, 6],
+      className: 'text-center',
+      orderable: false,
+    }],
+  });
+
+  $(".dataTables_filter input")
+    .attr("placeholder", "Search here...")
+    .css({
+      width: "300px",
+      display: "inline-block"
+    });
+
+  dataTable2.on('order.dt search.dt', function() {
+    dataTable2.column(0, {
+      search: 'applied',
+      order: 'applied'
+    }).nodes().each(function(cell, i) {
+      cell.innerHTML = i + 1;
+    });
+  }).draw();
+
+  $('[data-toggle="tooltip"]').tooltip();
+
+  $('#pilihDusun2').on('change', function(e) {
+    var status = $(this).val();
+    $('#pilihDusun2').val(status)
+    console.log(status)
+    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+    dataTable2.column(2).search(status).draw();
+  });
+
+  $('#pilihRT2').on('change', function(e) {
+    var status = $(this).val();
+    $('#pilihRT2').val(status)
+    console.log(status)
+    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+    dataTable2.column(3).search(status).draw();
+  })
+});
+</script>
+<script>
+$(document).ready(function() {
+  dataTable3 = $("#tableBLT").DataTable({
+    aaSorting: [],
+    responsive: true,
+    lengthChange: true,
+    bFilter: true,
+    // Pagination settings
+    dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+    // read more: https://datatables.net/examples/basic_init/dom.html
+    lengthMenu: [5, 10, 25, 50],
+    pageLength: 10,
+    language: {
+      'lengthMenu': 'Display _MENU_',
+    },
+
+    searchDelay: 500,
+    processing: true,
+    serverSide: false,
+    ajax: {
+      url: 'source/dummydata.json',
+      type: 'POST',
+
+    },
+
+    // ajax:  'source/dummydata.json',
+    columns: [{
+      data: 'null',
+      title: 'No',
+      render: function(data, type, row, meta) {
+        return meta.row + meta.settings._iDisplayStart + 1;
+      },
+      width: 35,
+      orderable: false,
+    }, {
+      data: 'penerima',
+      title: 'Penerima',
+    }, {
+      data: 'dusun',
+      title: 'Dusun',
+    }, {
+      data: 'rt',
+      title: 'RT',
+    }, {
+      data: 'kk',
+      title: 'No.KK',
+    }, {
+      data: 'ktp',
+      title: 'No.KTP'
+    }, {
+      data: 'sisa',
+      title: 'Sisa',
+    }],
+    columnDefs: [{
+      targets: [0, 1, 2, 3, 4, 5, 6],
+      className: 'text-center',
+      orderable: false,
+    }],
+  });
+
+  $(".dataTables_filter input")
+    .attr("placeholder", "Search here...")
+    .css({
+      width: "300px",
+      display: "inline-block"
+    });
+
+  dataTable3.on('order.dt search.dt', function() {
+    dataTable3.column(0, {
+      search: 'applied',
+      order: 'applied'
+    }).nodes().each(function(cell, i) {
+      cell.innerHTML = i + 1;
+    });
+  }).draw();
+
+  $('[data-toggle="tooltip"]').tooltip();
+
+  $('#pilihDusun3').on('change', function(e) {
+    var status = $(this).val();
+    $('#pilihDusun3').val(status)
+    console.log(status)
+    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+    dataTable3.column(2).search(status).draw();
+  });
+
+  $('#pilihRT3').on('change', function(e) {
+    var status = $(this).val();
+    $('#pilihRT3').val(status)
+    console.log(status)
+    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+    dataTable3.column(3).search(status).draw();
+  })
+});
+</script>
+<script>
+$(document).ready(function() {
+  dataTable4 = $("#tablePrakerja").DataTable({
+    aaSorting: [],
+    responsive: true,
+    lengthChange: true,
+    bFilter: true,
+    // Pagination settings
+    dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+    // read more: https://datatables.net/examples/basic_init/dom.html
+    lengthMenu: [5, 10, 25, 50],
+    pageLength: 10,
+    language: {
+      'lengthMenu': 'Display _MENU_',
+    },
+
+    searchDelay: 500,
+    processing: true,
+    serverSide: false,
+    ajax: {
+      url: 'source/dummydata.json',
+      type: 'POST',
+
+    },
+
+    // ajax:  'source/dummydata.json',
+    columns: [{
+      data: 'null',
+      title: 'No',
+      render: function(data, type, row, meta) {
+        return meta.row + meta.settings._iDisplayStart + 1;
+      },
+      width: 35,
+      orderable: false,
+    }, {
+      data: 'penerima',
+      title: 'Penerima',
+    }, {
+      data: 'dusun',
+      title: 'Dusun',
+    }, {
+      data: 'rt',
+      title: 'RT',
+    }, {
+      data: 'kk',
+      title: 'No.KK',
+    }, {
+      data: 'ktp',
+      title: 'No.KTP'
+    }, {
+      data: 'sisa',
+      title: 'Sisa',
+    }],
+    columnDefs: [{
+      targets: [0, 1, 2, 3, 4, 5, 6],
+      className: 'text-center',
+      orderable: false,
+    }],
+  });
+
+  $(".dataTables_filter input")
+    .attr("placeholder", "Search here...")
+    .css({
+      width: "300px",
+      display: "inline-block"
+    });
+
+  dataTable4.on('order.dt search.dt', function() {
+    dataTable4.column(0, {
+      search: 'applied',
+      order: 'applied'
+    }).nodes().each(function(cell, i) {
+      cell.innerHTML = i + 1;
+    });
+  }).draw();
+
+  $('[data-toggle="tooltip"]').tooltip();
+
+  $('#pilihDusun4').on('change', function(e) {
+    var status = $(this).val();
+    $('#pilihDusun4').val(status)
+    console.log(status)
+    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+    dataTable4.column(2).search(status).draw();
+  });
+
+  $('#pilihRT4').on('change', function(e) {
+    var status = $(this).val();
+    $('#pilihRT4').val(status)
+    console.log(status)
+    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+    dataTable4.column(3).search(status).draw();
+  })
+});
+</script>
+<script>
+$(document).ready(function() {
+  dataTable5 = $("#tableCSR").DataTable({
+    aaSorting: [],
+    responsive: true,
+    lengthChange: true,
+    bFilter: true,
+    // Pagination settings
+    dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+    // read more: https://datatables.net/examples/basic_init/dom.html
+    lengthMenu: [5, 10, 25, 50],
+    pageLength: 10,
+    language: {
+      'lengthMenu': 'Display _MENU_',
+    },
+
+    searchDelay: 500,
+    processing: true,
+    serverSide: false,
+    ajax: {
+      url: 'source/dummydata.json',
+      type: 'POST',
+
+    },
+
+    // ajax:  'source/dummydata.json',
+    columns: [{
+      data: 'null',
+      title: 'No',
+      render: function(data, type, row, meta) {
+        return meta.row + meta.settings._iDisplayStart + 1;
+      },
+      width: 35,
+      orderable: false,
+    }, {
+      data: 'penerima',
+      title: 'Penerima',
+    }, {
+      data: 'dusun',
+      title: 'Dusun',
+    }, {
+      data: 'rt',
+      title: 'RT',
+    }, {
+      data: 'kk',
+      title: 'No.KK',
+    }, {
+      data: 'ktp',
+      title: 'No.KTP'
+    }, {
+      data: 'sisa',
+      title: 'Sisa',
+    }],
+    columnDefs: [{
+      targets: [0, 1, 2, 3, 4, 5, 6],
+      className: 'text-center',
+      orderable: false,
+    }],
+  });
+
+  $(".dataTables_filter input")
+    .attr("placeholder", "Search here...")
+    .css({
+      width: "300px",
+      display: "inline-block"
+    });
+
+  dataTable5.on('order.dt search.dt', function() {
+    dataTable5.column(0, {
+      search: 'applied',
+      order: 'applied'
+    }).nodes().each(function(cell, i) {
+      cell.innerHTML = i + 1;
+    });
+  }).draw();
+
+  $('[data-toggle="tooltip"]').tooltip();
+
+  $('#pilihDusun5').on('change', function(e) {
+    var status = $(this).val();
+    $('#pilihDusun5').val(status)
+    console.log(status)
+    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+    dataTable5.column(2).search(status).draw();
+  });
+
+  $('#pilihRT5').on('change', function(e) {
+    var status = $(this).val();
+    $('#pilihRT5').val(status)
+    console.log(status)
+    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+    dataTable5.column(3).search(status).draw();
+  })
+});
+</script>
+
 </html>
