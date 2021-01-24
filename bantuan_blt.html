@@ -59,13 +59,13 @@
     <div class="container mt-4 mb-4">
       <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
-          <a class="nav-link link-tab active" href="index.html">Rangkuman</a>
+          <a class="nav-link link-tab " href="index.html">Rangkuman</a>
         </li>
         <li class="nav-item">
           <a class="nav-link link-tab" href="bantuan_pkh.html">PKH</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link link-tab" href="bantuan_blt.html">BLT</a>
+          <a class="nav-link link-tab active" href="bantuan_blt.html">BLT</a>
         </li>
         <li class="nav-item">
           <a class="nav-link link-tab" href="bantuan_prakerja.html">Prakerja</a>
@@ -76,7 +76,11 @@
       </ul>
       <!-- Tab panes -->
       <div class="tab-content mt-3">
-        <div role="tabpanel" class="tab-pane fade in active show" id="rangkuman">
+        <div role="tabpanel" class="tab-pane " id="rangkuman">
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="pkh">
+        </div>
+        <div role="tabpanel" class="tab-pane fade fade in active show" id="blt">
           <div class="container">
             <div class="row mb-4">
               <div class="col-md-6">
@@ -84,7 +88,7 @@
                   <div class="card-body bg-primary">
                     <div class="row px-4 py-2">
                       <div class="col-6">
-                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">1300</span> <br>
+                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">400</span> <br>
                         <span class="judul-card">Penduduk Mendapat Bantuan</span>
                       </div>
                       <div class="col-6 text-right center-v">
@@ -99,7 +103,7 @@
                   <div class="card-body bg-secondary">
                     <div class="row px-4 py-2">
                       <div class="col-6">
-                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">252</span> <br>
+                        <span id="mendapatBantuan" name="mendapatBantuan" class="jum-bantuan">150</span> <br>
                         <span class="judul-card">Kepala Keluarga Mendapat Bantuan</span>
                       </div>
                       <div class="col-6 text-right center-v">
@@ -113,9 +117,9 @@
             <div class="row">
               <div class="col-md-6 col-lg-3">
                 <div class="form-group row">
-                  <label for="pilihDusun1" class="col-sm-3 col-form-label">Dusun:</label>
+                  <label for="pilihDusun3" class="col-sm-3 col-form-label">Dusun:</label>
                   <div class="col-sm-9">
-                    <select class="form-control status-dropdown" id="pilihDusun1">
+                    <select class="form-control status-dropdown" id="pilihDusun3">
                       <option value="">Semua</option>
                       <option value="Dusun A">Dusun A</option>
                       <option value="Dusun B">Dusun B</option>
@@ -128,9 +132,9 @@
               </div>
               <div class="col-md-6 col-lg-3">
                 <div class="form-group row">
-                  <label for="pilihRT1" class="col-sm-3 col-form-label">RT:</label>
+                  <label for="pilihRT3" class="col-sm-3 col-form-label">RT:</label>
                   <div class="col-sm-9">
-                    <select class="form-control" id="pilihRT1">
+                    <select class="form-control" id="pilihRT3">
                       <option value="">Semua</option>
                       <option value="RT 1">RT 1</option>
                       <option value="RT 2">RT 2</option>
@@ -147,15 +151,11 @@
                 </button>
               </div>
               <div class="col-12">
-                <table id="tableRangkuman" class="table table-hover responsive nowrap" style="width:100%">
+                <table id="tableBLT" class="table table-hover responsive nowrap" style="width:100%">
                 </table>
               </div>
             </div>
           </div>
-        </div>
-        <div role="tabpanel" class="tab-pane fade" id="pkh">
-        </div>
-        <div role="tabpanel" class="tab-pane fade" id="blt">
         </div>
         <div role="tabpanel" class="tab-pane fade" id="prakerja">
         </div>
@@ -165,16 +165,16 @@
     </div>
   </section>
   <!-- Modal -->
-
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
 <script>
 $(document).ready(function() {
-  dataTable1 = $("#tableRangkuman").DataTable({
+  dataTable3 = $("#tableBLT").DataTable({
     aaSorting: [],
     responsive: true,
     lengthChange: true,
@@ -187,6 +187,7 @@ $(document).ready(function() {
     language: {
       'lengthMenu': 'Display _MENU_',
     },
+
     searchDelay: 500,
     processing: true,
     serverSide: false,
@@ -223,20 +224,9 @@ $(document).ready(function() {
     }, {
       data: 'sisa',
       title: 'Sisa',
-    }, {
-      field: 'jenis',
-      title: 'Jenis',
-      responsivePriority: -1,
-      className: 'text-center',
-      orderable: false,
-      width: 100,
-      render: function(data, type, full, meta) {
-        return `
-                    <a class="btn btn-sm btn-outline-primary no-click" style="border-radius:2rem">PKH</a>`;
-      },
     }],
     columnDefs: [{
-      targets: [0, 1, 2, 3, 4, 5, 6, 7],
+      targets: [0, 1, 2, 3, 4, 5, 6],
       className: 'text-center',
       orderable: false,
     }],
@@ -249,8 +239,8 @@ $(document).ready(function() {
       display: "inline-block"
     });
 
-  dataTable1.on('order.dt search.dt', function() {
-    dataTable1.column(0, {
+  dataTable3.on('order.dt search.dt', function() {
+    dataTable3.column(0, {
       search: 'applied',
       order: 'applied'
     }).nodes().each(function(cell, i) {
@@ -260,22 +250,21 @@ $(document).ready(function() {
 
   $('[data-toggle="tooltip"]').tooltip();
 
-  $('#pilihDusun1').on('change', function(e) {
+  $('#pilihDusun3').on('change', function(e) {
     var status = $(this).val();
-    $('#pilihDusun1').val(status)
+    $('#pilihDusun3').val(status)
     console.log(status)
     //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
-    dataTable1.column(2).search(status).draw();
+    dataTable3.column(2).search(status).draw();
   });
 
-  $('#pilihRT1').on('change', function(e) {
+  $('#pilihRT3').on('change', function(e) {
     var status = $(this).val();
-    $('#pilihRT1').val(status)
+    $('#pilihRT3').val(status)
     console.log(status)
     //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
-    dataTable1.column(3).search(status).draw();
+    dataTable3.column(3).search(status).draw();
   })
 });
 </script>
-
 </html>
